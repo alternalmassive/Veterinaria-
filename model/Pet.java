@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Pet
 {
 //Constants------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	public final static char PERRO = 'P';
-	public final static char GATO = 'G';
-	public final static char AVE = 'A';
-	public final static char OTRO = 'O';
+	public final static String PERRO = "perro";
+	public final static String GATO = "gato";
+	public final static String AVE = "ave";
+	public final static String OTRO = "otro";
+	public final static char HEMBRA = 'F';
+	public final static char MACHO = 'M';
 //Atributes------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	private String name;
 	private String typePet;
@@ -75,5 +77,19 @@ public class Pet
 	{
 		return history;
 	}
+	public void setHistory(MedicalHistory history)
+	{
+		this.history = history;
+	}
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public void createMedicine(String nameM, int dose, double costDose, String frequency)
+	{
+		history.addMedicine(new Medicine(nameM, dose, costDose, frequency));
+	}
+	public String reportHistory()
+	{
+		String massage = "";
+		massage = "Fecha de admision: " + history.getDateAdmission() + "\nSintomas: " + history.getSymptom() + "\nDiagnostico: " + history.getDiagnostic() + "\nEstado: " + history.getState();
+		return massage;
+	}
 }

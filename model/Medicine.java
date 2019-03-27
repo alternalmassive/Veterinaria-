@@ -11,9 +11,9 @@ public class Medicine
 //Relations------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Constructor----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	public Medicine(String name, int dose, double costDose, String frequency)
+	public Medicine(String nameM, int dose, double costDose, String frequency)
 	{
-		this.name = name;
+		name = nameM;
 		this.dose = dose;
 		this.costDose = costDose;
 		this.frequency = frequency;

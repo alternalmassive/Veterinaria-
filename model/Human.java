@@ -50,12 +50,44 @@ public class Human
 	
 	public int getPhone()
 	{
-		return phone;
+		return phone; 
 	}
 	public void setPhone(int phone)
 	{
 		this.phone = phone;
 	}
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	
+	public void addPet(String name, String typePet, int age, double weight, char gender, MedicalHistory create)
+	{
+		Pet newPet = new Pet(name, typePet, age, weight, gender, create);
+		pets.add(newPet);
+	}
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public void checkPet()
+	{
+		int report;
+		report = pets.size();
+		System.out.println(report);
+	}
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public Pet searchPet(String name)
+	{	
+		Pet found = null;
+		int i = 0;
+		while(found == null && i<pets.size())
+		{
+			if(pets.get(i).getName() == name)
+			{
+				found = pets.get(i);
+			}
+			else
+			{
+				i++;
+			}
+			return found;
+		}	
+		return found;
+	}
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 }

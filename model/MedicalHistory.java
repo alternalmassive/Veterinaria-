@@ -3,19 +3,22 @@ import java.util.ArrayList;
 public class MedicalHistory
 {
 //Constants------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+	public final static String ABIERTO = "abierto";
+	public final static String CERRADO = "cerrado";
 //Atributes------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	private String dateAdmission;
 	private String symptom;
 	private String diagnostic;
+	private String state;
 //Relations------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	private ArrayList<Medicine>medicines;
 //Constructor----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	public MedicalHistory(String dateAdmission, String symptom, String diagnostic)
+	public MedicalHistory(String dateAdmission, String symptom, String diagnostic, String state)
 	{
 		this.dateAdmission = dateAdmission;
 		this.symptom = symptom;
 		this.diagnostic = diagnostic;
+		this.state = state;
 		medicines = new ArrayList<>();
 	}
 //Methods--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,5 +48,18 @@ public class MedicalHistory
 	{
 		this.diagnostic = diagnostic;
 	}
+	
+	public String getState()
+	{
+		return state;
+	}
+	public void setState(String state)
+	{
+		this.state = state;
+	}
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public void addMedicine(Medicine create)
+	{
+		medicines.add(create);
+	}
 }
